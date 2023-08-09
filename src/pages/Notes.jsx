@@ -46,16 +46,30 @@ function Notes({ notes }) {
           className="btn"
           onClick={() => setShowSearch((prevState) => !prevState)}
         >
-          {!showSearch && <CiSearch onClick={() => {handleSearch()}} />}
-          {showSearch && <IoMdClose onClick={() => {setFilteredNotes(notes)}} />}
+          {!showSearch && (
+            <CiSearch
+              onClick={() => {
+                handleSearch();
+              }}
+            />
+          )}
+          {showSearch && (
+            <IoMdClose
+              onClick={() => {
+                setFilteredNotes(notes);
+              }}
+            />
+          )}
         </button>
       </header>
       <div className="notes-container">
-        {filteredNotes.length > 0 
-          ? filteredNotes.map((note) => <NoteItem key={note.id} note={note} />)
-          : <p>There's no Notes Here</p>}
+        {filteredNotes.length > 0 ? (
+          filteredNotes.map((note) => <NoteItem key={note.id} note={note} />)
+        ) : (
+          <p>There's no Notes Here</p>
+        )}
       </div>
-      <Link className="btn add-btn" to={`/create-note`}>
+      <Link className="btn add-btn" to={`/notes-app/create-note`}>
         <BsPlusLg />
       </Link>
     </section>
