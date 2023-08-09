@@ -17,7 +17,7 @@ function CreateNote({ setNotes }) {
       const note = { id: uuid(), title, details, date };
       //add Notes To notes Array
       setNotes((previosNote) => [note, ...previosNote]);
-      navigate("/");
+      navigate("/notes-app");
     } else if (title) {
       alert('please enter valid details')
     

@@ -27,7 +27,7 @@ function EditNote({ notes, setNotes }) {
       setNotes(newNotes);
     }
     //back to home page
-    navigate("/");
+    navigate("/notes-app");
   };
 
   // Delete note
@@ -36,7 +36,7 @@ function EditNote({ notes, setNotes }) {
     if (window.confirm(`Are you sure you want to delete?`)) {
       const newNotes = notes.filter((item) => item.id !== id);
       setNotes(newNotes);
-      navigate("/");
+      navigate("/notes-app");
     }
   };
 
